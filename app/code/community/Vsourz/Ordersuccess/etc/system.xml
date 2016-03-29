@@ -1,16 +1,10 @@
 <?xml version="1.0"?>
 <config>
-    <tabs>
-        <myconf translate="label">
-            <label>Vsourz Success Page</label>
-            <sort_order>150</sort_order>
-        </myconf>
-    </tabs>
     <sections>
         <tab1 translate="label" module="adminhtml">
-            <label>Order Success Page</label>
-            <tab>myconf</tab>
-            <sort_order>10</sort_order>
+            <label>Tela de sucesso</label>
+            <tab>sales</tab>
+            <sort_order>1000</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
