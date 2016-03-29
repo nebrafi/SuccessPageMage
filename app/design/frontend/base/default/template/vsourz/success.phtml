@@ -14,6 +14,7 @@
 <?php
 	$_coreHelper = $this->helper('core');
 ?>
+<div class="thanks-outer">
 
 <?php if($this->getTopBlock()!=false): ?>
 	<?php if($displayCmsBlockAbove==1): ?>
@@ -22,26 +23,15 @@
 		?></div><?php
 		 endif;
 	endif;
-?>
-<h1 class="titulo_principal"><span>Finalizar <b>Compra </b></span></h1>
-
-
-
-
-<!-- <h2 class="title_popup"><?php echo $this->__('Your order has been received.') ?></h2><?php
+?><div class="thanks-inner">
+	<div class="page-title thank">
+		<h1><?php echo $this->__('Thank You') ?></h1>
+	</div><?php
 		echo $this->getMessagesBlock()->getGroupedHtml() 
-?> -->
-<div class="uk-grid uk-grid-medium">
-
-	<h2 class="step_title uk-width-1-1">
-                        <i class="uk-icon-check-circle"></i>
-                        <span>Obrigado</span>
-</h2>
-
-<div class="uk-width-medium-1-3">
-	
-		<div class="success_div">
-			<h3 class="title_popup"><?php echo $this->__('Thank you for your purchase!') ?></h3>
+?><div class="thkbox">
+	<div class="thk-box1">
+		<div class="outer-box">
+			<h3><?php echo $this->__('Thank you for your order!') ?></h3>
 			<div class="inner-box">
 				<?php if($this->getOrderId()): ?>
 					<?php if($this->getCanViewOrder()): ?>
@@ -56,12 +46,9 @@
 			</div>
 		</div>
 	</div>
-
-
-	<div class="uk-width-medium-2-3">
-
-		<div class="success_div">
-		<h3 class="title_popup"><?php echo $this->__('Resumo do pedido') ?></h3>
+	<div class="thk-box2">
+		<div class="outer-box">
+		<h3><?php echo $this->__('Your order summary') ?></h3>
 			<div class="inner-box">
 			<?php if($this->getOrderId()): ?>
 				<?php echo $this->__('<a href="%s" onclick="this.target=\'_blank\'" class="button print-icon" title="Print Details">Print Details</a>', $this->getPrintUrl()) ?>
@@ -139,7 +126,8 @@
 			</div>
 		</div>
 	</div>
-
+	<div class="clear"></div>
+</div>
 
 <?php	
 //**********************************Order Details***************************
@@ -147,10 +135,8 @@ if($displayOrderTable==1):
 	if($this->getOrderId()):
 		$orderItems = $orderObj->getAllVisibleItems();
 		?>
-		<div class="uk-width-1-1">
-			<div class="success_div">
-				<h3 class="title_popup">Resumo da Compra</h3>
-			<table class="uk-table">			
+		<div class="pro-cart-summery">
+			<table class="cart-summery-table data-table">			
 				<thead>
 					<th class="first a-left"><?php echo $this->__('Product Name') ?></th>
 					<th class="a-center"><?php echo $this->__('Quantity') ?></th>
@@ -253,11 +239,9 @@ if($displayOrderTable==1):
 				</tfoot>
 			</table>
         </div>
-        </div>
 		<?php endif; 
 endif;
 ?></div>
-
 
 <?php if($this->getBottomBlock()!=false): ?>
 	<?php if($displayCmsBlockBelow==1): ?>
@@ -275,5 +259,4 @@ endif;
 	</div><?php 
 	endif;
 ?>
-</div>
 </div>
